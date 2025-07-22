@@ -39,3 +39,54 @@ df2.columns = wt_cols
 
 def lookup_tbl2(df, base, w):
     if 12500 not in df.columns:
+        st.error("Column 12500 lb not found in Table 2 headers.")
+        st.stop()
+    ref = df[12500]
+    valid = ref[ref <= base]
+    row = valid.index.max() if not valid.empty else 0
+    if w not in df.columns:
+        st.error(f"Selected weight {w} lb not found in table.")
+        st.stop()
+    return df.at[row, w]
+
+weight_adj = lookup_tbl2(df2, baseline, weight)
+st.markdown("### Step 2: Weight Adjustment")
+st.write(f"Selected Weight: **{weight} lb**")
+st.success(f"Weight-adjusted distance: **{weight_adj:.0f} ft**")
+
+# ─── Step 4: Table 3 – Wind Adjustment ──────────────────────────────────────
+raw3 = pd.read_csv("wind adjustment.csv", header=None)
+wind_cols = [int(str(w).strip()) for w in raw3.iloc[0]]
+df3 = raw3.iloc[1:].reset_index(drop=True).astype(float)
+df3.columns = wind_cols
+
+def lookup_tbl3(df, refd, ws):
+    ref0 = df[0]
+    valid = ref0[ref0 <= refd]
+    row = valid.index.max() if not valid.empty else 0
+    if ws not in df.columns:
+        st.error(f"Wind speed {ws} kt not found in table.")
+        st.stop()
+    return df.at[row, ws] - df.at[row, 0]
+
+delta_wind = lookup_tbl3(df3, weight_adj, wind)
+wind_adj   = weight_adj + delta_wind
+st.markdown("### Step 3: Wind Adjustment")
+st.write(f"Wind: **{wind:+.0f} kt** → Δ: **{delta_wind:+.0f} ft**")
+st.success(f"After wind adjustment: **{wind_adj:.0f} ft**")
+
+# ─── Step 5: Table 4 – 50 ft Obstacle Correction ────────────────────────────
+raw4 = pd.read_csv("50ft.csv", header=None)
+obs_cols = [int(str(c).strip()) for c in raw4.iloc[0]]
+df4 = raw4.iloc[1:].reset_index(drop=True).astype(float)
+df4.columns = obs_cols
+
+def lookup_tbl4(df, refd):
+    ref0 = df[0]
+    valid = ref0[ref0 <= refd]
+    row = valid.index.max() if not valid.empty else 0
+    return df.at[row, 50]
+
+obs50 = lookup_tbl4(df4, wind_adj)
+st.markdown("### Step 4: 50 ft Obstacle Correction")
+st.success(f"Final landing distance over 50 ft obstacle: **{obs50:.0f} ft**")
