@@ -32,5 +32,10 @@ st.write(f"Pressure Altitude: **{press_alt} ft**  \nOAT: **{oat} °C**")
 st.success(f"Baseline landing distance: **{baseline:.0f} ft**")
 
 # ─── Step 3: Table 2 – Weight Adjustment ────────────────────────────────────
-try:
-    raw2 = pd.read_csv("weightadjustment.csv", header=0)  # use header row
+raw2 = pd.read_csv("weightadjustment.csv", header=0)
+wt_cols = [int(str(w).strip()) for w in raw2.columns]
+df2 = raw2.astype(float)
+df2.columns = wt_cols
+
+def lookup_tbl2(df, base, w):
+    if 12500 not in df.columns:
