@@ -17,16 +17,16 @@ st.sidebar.markdown("""
 <div style='border: 1px solid #DDD; padding: 10px; border-radius: 5px; background-color: #FAFAFA'>
 <strong>Associated Conditions</strong><br>
 
-<strong>POWER</strong> – Retard to Maintain 1000ft/m on final app
-<strong>FLAPS</strong> - 100%
-<strong>RUNWAY</strong> - Paved, Level, Dry Surface
-<strong>Approach Speed</strong> - As tabulated
-<strong>Braking</strong> - Maximum
-<strong>Condition Levers</strong> - High Idle
-<strong>Propellor Controls</strong> - Full Forward
-<strong>Power Levers</strong> - Max Reverse After touchdown
-Untill Fully Stopped
-
+st.sidebar.info("**Associated Conditions**\n\n"
+                "**POWER** – Retard to Maintain 1000ft/m on final app\n"
+                "**FLAPS** – 100%\n"
+                "**RUNWAY** – Paved, Level, Dry Surface\n"
+                "**Approach Speed** – As tabulated\n"
+                "**Braking** – Maximum\n"
+                "**Condition Levers** – High Idle\n"
+                "**Propellor Controls** – Full Forward\n"
+                "**Power Levers** – Max Reverse After touchdown\n"
+                "**Deceleration** – Until Fully Stopped")
 </div>
 """, unsafe_allow_html=True)
 # ─── Step 2: Table 1 – Pressure-Height × OAT ────────────────────────────────
