@@ -6,15 +6,11 @@ st.set_page_config(page_title="B200 Landing Distance Calculator", layout="center
 st.title("B200 King Air Landing Distance Estimator")
 
 # ─── Step 1: User Inputs ────────────────────────────────────────────────────
-col1, col2 = st.columns(2)
-with col1:
-    press_alt = st.slider("Pressure Altitude (ft)", 0, 10000, 2000, 250)
-    oat       = st.slider("Outside Air Temperature (°C)", -5, 45, 15, 1)
-with col2:
-    weight    = st.slider("Landing Weight (lb)", 9000, 12500, 11500, 100)
-    wind      = st.slider("Wind Speed (kt)", -20, 30, 0, 1,
-                          help="Negative = tailwind, Positive = headwind")
-
+press_alt = st.sidebar.slider("Pressure Altitude (ft)", 0, 10000, 2000, 250)
+oat       = st.sidebar.slider("Outside Air Temperature (°C)", -5, 45, 15, 1)
+weight    = st.sidebar.slider("Landing Weight (lb)", 9000, 12500, 11500, 100)
+wind      = st.sidebar.slider("Wind Speed (kt)", -20, 30, 0, 1,
+                              help="Negative = tailwind, Positive = headwind")
 # ─── Step 2: Table 1 – Pressure-Height × OAT ────────────────────────────────
 raw1 = pd.read_csv("pressureheight_oat.csv", skiprows=[0])
 raw1 = raw1.rename(columns={ raw1.columns[0]: "dummy", raw1.columns[1]: "PressAlt" })
