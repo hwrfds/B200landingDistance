@@ -15,9 +15,9 @@ wind      = st.sidebar.slider("Wind Speed (kt)", -20, 30, 0, 1,
 
 st.sidebar.markdown("""
 <div style='border: 1px solid #DDD; padding: 10px; border-radius: 5px; background-color: #FAFAFA'>
-Associated Conditions
-**POWER** - Retard to Maintain
-        1000ft/m on final app
+<strong>Associated Conditions</strong><br>
+<strong>POWER</strong> – Retard to Maintain<br>
+1000ft/m on final app
 </div>
 """, unsafe_allow_html=True)
 # ─── Step 2: Table 1 – Pressure-Height × OAT ────────────────────────────────
