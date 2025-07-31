@@ -26,7 +26,7 @@ st.sidebar.info("**Associated Conditions**\n\n"
                 "**Power Levers** – Max Reverse After touchdown\n"
                 "**Deceleration** – Until Fully Stopped")
 
-""", unsafe_allow_html=True)
+
 # ─── Step 2: Table 1 – Pressure-Height × OAT ────────────────────────────────
 raw1 = pd.read_csv("pressureheight_oat.csv", skiprows=[0])
 raw1 = raw1.rename(columns={ raw1.columns[0]: "dummy", raw1.columns[1]: "PressAlt" })
