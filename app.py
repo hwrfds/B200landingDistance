@@ -4,7 +4,8 @@ import pandas as pd
 # ─── Page Setup ─────────────────────────────────────────────────────────────
 st.set_page_config(page_title="B200 Landing Distance Calculator", layout="centered")
 st.title("B200 King Air Landing Distance Estimator")
-
+st.sidebar.title("Landing Performance Inputs")  # Larger, bold title
+st.sidebar.header("Conditions")                 # Slightly smaller, section header
 # ─── Step 1: User Inputs ────────────────────────────────────────────────────
 press_alt = st.sidebar.slider("Pressure Altitude (ft)", 0, 10000, 2000, 250)
 oat       = st.sidebar.slider("Outside Air Temperature (°C)", -5, 45, 15, 1)
