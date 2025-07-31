@@ -13,9 +13,7 @@ weight    = st.sidebar.slider("Landing Weight (lb)", 9000, 12500, 11500, 100)
 wind      = st.sidebar.slider("Wind Speed (kt)", -20, 30, 0, 1,
                               help="Negative = tailwind, Positive = headwind")
 
-st.sidebar.markdown("""
-<div style='border: 1px solid #DDD; padding: 10px; border-radius: 5px; background-color: #FAFAFA'>
-<strong>Associated Conditions</strong><br>
+
 
 st.sidebar.info("**Associated Conditions**\n\n"
                 "**POWER** – Retard to Maintain 1000ft/m on final app\n"
@@ -27,7 +25,7 @@ st.sidebar.info("**Associated Conditions**\n\n"
                 "**Propellor Controls** – Full Forward\n"
                 "**Power Levers** – Max Reverse After touchdown\n"
                 "**Deceleration** – Until Fully Stopped")
-</div>
+
 """, unsafe_allow_html=True)
 # ─── Step 2: Table 1 – Pressure-Height × OAT ────────────────────────────────
 raw1 = pd.read_csv("pressureheight_oat.csv", skiprows=[0])
