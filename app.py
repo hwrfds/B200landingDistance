@@ -23,7 +23,7 @@ st.sidebar.info("**Associated Conditions**  \n"
                 "**Braking** – Maximum  \n"
                 "**Condition Levers** – High Idle  \n"
                 "**Propellor Controls** – Full Forward  \n"
-                "**Power Levers** – Max Reverse After touchdown Until Fully Stopped  \n" ")
+                "**Power Levers** – Max Reverse After touchdown Until Fully Stopped")
                  
 
 
