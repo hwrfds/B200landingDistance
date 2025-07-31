@@ -24,7 +24,18 @@ st.sidebar.info("**Associated Conditions**  \n"
                 "**Condition Levers** – High Idle  \n"
                 "**Propellor Controls** – Full Forward  \n"
                 "**Power Levers** – Max Reverse After Touchdown Until Fully Stopped")
-                 
+
+st.sidebar.markdown(f"""
+**App IAS**
+
+| Weight lbs       | App Speed KTS|
+|------------------|--------------|
+| 12,500           | 103          |
+| 12,000           | 102          |
+| 11,000           | 99           |
+| 10,000           | 96           |
+| 9,000            | 93           |
+""")
 
 
 # ─── Step 2: Table 1 – Pressure-Height × OAT ────────────────────────────────
