@@ -15,15 +15,15 @@ wind      = st.sidebar.slider("Wind Speed (kt)", -20, 30, 0, 1,
 
 
 
-st.sidebar.info("**Associated Conditions**\n\n"
-                "**POWER** – Retard to Maintain 1000ft/m on final app\n"
-                "**FLAPS** – 100%\n"
-                "**RUNWAY** – Paved, Level, Dry Surface\n"
-                "**Approach Speed** – As tabulated\n"
-                "**Braking** – Maximum\n"
-                "**Condition Levers** – High Idle\n"
-                "**Propellor Controls** – Full Forward\n"
-                "**Power Levers** – Max Reverse After touchdown\n"
+st.sidebar.info("**Associated Conditions**  \n"
+                "**POWER** – Retard to Maintain 1000ft/m on final app  \n"
+                "**FLAPS** – 100%  \n"
+                "**RUNWAY** – Paved, Level, Dry Surface  \n"
+                "**Approach Speed** – As tabulated  \n"
+                "**Braking** – Maximum  \n"
+                "**Condition Levers** – High Idle  \n"
+                "**Propellor Controls** – Full Forward  \n"
+                "**Power Levers** – Max Reverse After touchdown  \n"
                 "**Deceleration** – Until Fully Stopped")
 
 
