@@ -18,6 +18,15 @@ st.sidebar.markdown("""
 <strong>Associated Conditions</strong><br>
 
 <strong>POWER</strong> – Retard to Maintain 1000ft/m on final app
+<strong>FLAPS</strong> - 100%
+<strong>RUNWAY</strong> - Paved, Level, Dry Surface
+<strong>Approach Speed</strong> - As tabulated
+<strong>Braking</strong> - Maximum
+<strong>Condition Levers</strong> - High Idle
+<strong>Propellor Controls</strong> - Full Forward
+<strong>Power Levers</strong> - Max Reverse After touchdown
+Untill Fully Stopped
+
 </div>
 """, unsafe_allow_html=True)
 # ─── Step 2: Table 1 – Pressure-Height × OAT ────────────────────────────────
