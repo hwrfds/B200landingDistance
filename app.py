@@ -12,6 +12,13 @@ oat       = st.sidebar.slider("Outside Air Temperature (°C)", -5, 45, 15, 1)
 weight    = st.sidebar.slider("Landing Weight (lb)", 9000, 12500, 11500, 100)
 wind      = st.sidebar.slider("Wind Speed (kt)", -20, 30, 0, 1,
                               help="Negative = tailwind, Positive = headwind")
+
+st.sidebar.markdown("""
+<div style='border: 1px solid #DDD; padding: 10px; border-radius: 5px; background-color: #FAFAFA'>
+**Note:** Ensure values match performance chart assumptions.  
+Use caution when interpreting results during abnormal operations.
+</div>
+""", unsafe_allow_html=True)
 # ─── Step 2: Table 1 – Pressure-Height × OAT ────────────────────────────────
 raw1 = pd.read_csv("pressureheight_oat.csv", skiprows=[0])
 raw1 = raw1.rename(columns={ raw1.columns[0]: "dummy", raw1.columns[1]: "PressAlt" })
